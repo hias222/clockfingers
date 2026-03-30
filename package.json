@@ -1,0 +1,13 @@
+{
+  "name": "clockfingers",
+  "version": "1.0.0",
+  "description": "Node.js app that shows a clock and four fingers every 15 seconds",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.5"
+  }
+}
