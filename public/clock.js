@@ -41,8 +41,13 @@ function drawMinuteNumber(ctx, radius, time) {
 function drawQuarterHands(ctx, radius) {
   const now = new Date();
   const ms = now.getMilliseconds();
-  const s = now.getSeconds() + ms / 1000;
-  const colors = ['red', 'green', 'blue', 'yellow'];
+  let s = now.getSeconds() + ms / 1000;
+  // Apply red finger offset if set
+  if (window.redFingerOffset) {
+    s = (s + window.redFingerOffset) % 60;
+  }
+  // Order: red, darker grey (for contrast), green, white
+  const colors = ['red', '#888888', 'green', 'white'];
   // All hands: same width and length
   const handWidth = radius * 0.09;
   const handLength = radius * 0.9;
